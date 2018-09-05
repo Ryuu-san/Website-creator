@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="JavaScript.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <link rel="Stylesheet" type="text/css" href="css/jpicker-1.1.6.min.css" />
+    <link rel="Stylesheet" type="text/css" href="jPicker.css" />
+    <script src="конструктор цвета/jpicker-1.1.6.min.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/overcast/jquery-ui.css" />
+    <title>Конструктор</title>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-menu-panel"></div>
+        <!-- Панелька меню -->
+        <div id="header-right-menu-panel">
+            <div id="header-control-panel-create-blok">
+                <div id="panel-create-blok" onmousedown="return false" onselectstart="return false">
+                    <p id="description">Создать блок</p>
+                </div>
+            </div>
+            <div id="item-size-menu">
+                <div id="width-adjuster">
+                    <p>Ширина<input type="range" id="adjuster-width" value="0" max="2000"></p>
+                    <input type="text" id="width-slider" placeholder="Ширина: 0px">
+                    <button type="button" onclick="width_input()">Применить ширину</button>
+                </div>
+                <div id="height-adjuster">
+                    <p>Высота<input type="range" id="adjuster-height" value="0" max="2000"></p>
+                    <input type="text" id="height-slider" placeholder="Высота: 0px">
+                    <button type="button" onclick="height_input()">Применить высоту</button>
+                </div>
+                <div id="color-adjuster">
+                    <p>Рандомный цвет<input type="range" id="adjuster-color" value="0" max="999999"></p>
+                    <input type="text" id="color-slider" placeholder="Цвет по умолчанию">
+                    <button type="button" onclick="color_input()">Применить выбранный цвет</button>
+                </div>
+                <div id="calling-the-color-bar" onclick="open_menu_color()"></div>
+                <button type="button" onclick="hide_resizing()">Убрать панель</button>
+            </div>
+            <!-- Панель для выбора стандартных цветов -->
+            <div id="panel_menu_color">
+                <div id="menu-color" onmousedown="return false" onselectstart="return false">
+                    <section id="menu-c-1">
+                        <div id="c-1" onclick="color_selection_1()"></div>
+                        <div id="c-2" onclick="color_selection_2()"></div>
+                        <div id="c-3" onclick="color_selection_3()"></div>
+                        <div id="c-4" onclick="color_selection_4()"></div>
+                        <div id="c-5" onclick="color_selection_5()"></div>
+                        <div id="c-6" onclick="color_selection_6()"></div>
+                        <div id="c-7" onclick="color_selection_7()"></div>
+                        <div id="c-8" onclick="color_selection_8()"></div>
+                        <div id="c-9" onclick="color_selection_9()"></div>
+                        <div id="c-10" onclick="color_selection_10()"></div>
+                        <div id="c-11" onclick="color_selection_11()"></div>
+                        <div id="c-11" onclick="color_selection_12()"></div>
+                    </section>
+                    <section id="menu-c-2">
+                        <div id="c-12" onclick="color_selection_13()"></div>
+                        <div id="c-13" onclick="color_selection_14()"></div>
+                        <div id="c-14" onclick="color_selection_15()"></div>
+                        <div id="c-15" onclick="color_selection_16()"></div>
+                        <div id="c-16" onclick="color_selection_17()"></div>
+                        <div id="c-17" onclick="color_selection_18()"></div>
+                        <div id="c-18" onclick="color_selection_19()"></div>
+                        <div id="c-19" onclick="color_selection_20()"></div>
+                        <div id="c-20" onclick="color_selection_21()"></div>
+                        <div id="c-21" onclick="color_selection_22()"></div>
+                        <div id="c-22" onclick="color_selection_23()"></div>
+                        <div id="c-23" onclick="color_selection_24()"></div>
+                    </section>
+                    <section id="menu-c-3">
+                        <div id="c-24" onclick="color_selection_25()"></div>
+                        <div id="c-25" onclick="color_selection_26()"></div>
+                        <div id="c-26" onclick="color_selection_27()"></div>
+                        <div id="c-27" onclick="color_selection_28()"></div>
+                        <div id="c-28" onclick="color_selection_29()"></div>
+                        <div id="c-29" onclick="color_selection_30()"></div>
+                        <div id="c-30" onclick="color_selection_31()"></div>
+                        <div id="c-31" onclick="color_selection_32()"></div>
+                        <div id="c-32" onclick="color_selection_33()"></div>
+                        <div id="c-33" onclick="color_selection_34()"></div>
+                        <div id="c-34" onclick="color_selection_35()"></div>
+                        <div id="c-35" onclick="color_selection_36()"></div>
+                    </section>
+                    <section id="menu-c-4">
+                        <div id="c-36" onclick="color_selection_37()"></div>
+                        <div id="c-37" onclick="color_selection_38()"></div>
+                        <div id="c-38" onclick="color_selection_39()"></div>
+                        <div id="c-39" onclick="color_selection_40()"></div>
+                        <div id="c-40" onclick="color_selection_41()"></div>
+                        <div id="c-41" onclick="color_selection_42()"></div>
+                        <div id="c-42" onclick="color_selection_43()"></div>
+                        <div id="c-43" onclick="color_selection_44()"></div>
+                        <div id="c-44" onclick="color_selection_45()"></div>
+                        <div id="c-45" onclick="color_selection_46()"></div>
+                        <div id="c-46" onclick="color_selection_47()"></div>
+                        <div id="c-47" onclick="color_selection_48()"></div>
+                    </section>
+                    <section id="menu-c-5">
+                        <div id="c-48" onclick="color_selection_49()"></div>
+                        <div id="c-49" onclick="color_selection_50()"></div>
+                        <div id="c-50" onclick="color_selection_51()"></div>
+                        <div id="c-51" onclick="color_selection_52()"></div>
+                        <div id="c-52" onclick="color_selection_53()"></div>
+                        <div id="c-53" onclick="color_selection_54()"></div>
+                        <div id="c-54" onclick="color_selection_55()"></div>
+                        <div id="c-55" onclick="color_selection_56()"></div>
+                        <div id="c-56" onclick="color_selection_57()"></div>
+                        <div id="c-57" onclick="color_selection_58()"></div>
+                        <div id="c-58" onclick="color_selection_59()"></div>
+                        <div id="c-58" onclick="color_selection_60()"></div>
+                    </section>
+                    <section id="menu-c-6">
+                        <div id="c-59" onclick="color_selection_61()"></div>
+                        <div id="c-60" onclick="color_selection_62()"></div>
+                        <div id="c-61" onclick="color_selection_63()"></div>
+                        <div id="c-62" onclick="color_selection_64()"></div>
+                        <div id="c-63" onclick="color_selection_65()"></div>
+                        <div id="c-64" onclick="color_selection_66()"></div>
+                        <div id="c-65" onclick="color_selection_67()"></div>
+                        <div id="c-66" onclick="color_selection_68()"></div>
+                        <div id="c-67" onclick="color_selection_69()"></div>
+                        <div id="c-68" onclick="color_selection_70()"></div>
+                        <div id="c-69" onclick="color_selection_71()"></div>
+                        <div id="c-70" onclick="color_selection_72()"></div>
+                    </section>
+                </div>
+            </div>
+            <!-- <button type="button" id="create_block">Создать блок</button> -->
+            <!-- Ниже редактор цвета для всего и вся -->
+            <!-- <div id="jPicker"> -->
+            <!-- <div id="Inline"></div> -->
+            <!-- <span id="Expandable"></span> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    <div id="generator-and-its-elements">
+        <div id="menu-generator-and-its-elements">
+            <div id="menu_blok" class="menu_blok">
+                <!-- <div class="blok-1" id="blok-1"></div> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

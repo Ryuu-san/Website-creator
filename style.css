@@ -1,0 +1,424 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    border: 1px solid grey;
+    border-top: none;
+    background-color: #00ff8015;
+}
+
+
+/* Панели управление конструктором */
+
+#header-menu-panel {
+    /* position: fixed; */
+    width: 20%;
+    height: 40px;
+    float: right;
+    border-left: 1px solid grey;
+    border-top: none;
+    background-color: #00ff5532;
+}
+
+#header-right-menu-panel {
+    width: 20%;
+    height: 820px;
+    position: absolute;
+    top: 103%;
+    right: 0.02%;
+    border: 1px solid grey;
+    border-top: none;
+    border-right: none;
+    background-color: #2df5a14f;
+}
+
+#header-control-panel-create-blok {
+    width: 160px;
+    height: 100px;
+    margin: 10px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+#header-control-panel-create-blok:hover {
+    box-shadow: 0px 0px 2px 0px #000000;
+}
+
+#header-control-panel-create-blok:hover #panel-create-blok {
+    border: 4px solid #969696;
+}
+
+#header-control-panel-create-blok:hover #description {
+    color: #00fbb0;
+}
+
+#panel-create-blok {
+    width: 120px;
+    height: 60px;
+    margin: 16px auto;
+    border: 4px solid #bbbbbb;
+}
+
+#description {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#item-size-menu {
+    width: 200px;
+    display: none;
+    background-color: #a3a3a369;
+}
+
+
+/* */
+
+
+/*Место создания блоков*/
+
+#menu-generator-and-its-elements {
+    float: left;
+    margin: 100px 0px 0px 20px;
+}
+
+#blok-1 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    cursor: pointer;
+    background: red;
+}
+
+
+/* */
+
+
+/* Редактор цвета */
+
+
+/* #jPicker {
+    position: absolute;
+    right: 200px;
+} */
+
+#menu-color {
+    width: 170px;
+    position: absolute;
+    display: none;
+    top: 120px;
+    left: -420px;
+    background-color: #24fd444f;
+}
+
+#menu-color div {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin: 2px;
+    padding: 0px;
+    border: 1px solid #000000;
+}
+
+#menu-color section {
+    width: 20px;
+    display: inline-block;
+    margin: 2px;
+    padding: 0px;
+}
+
+#calling-the-color-bar {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #ffffff;
+}
+
+#c-1 {
+    background-color: #ffffff;
+}
+
+#c-2 {
+    background-color: #e5e5e5;
+}
+
+#c-3 {
+    background-color: #cccccc;
+}
+
+#c-4 {
+    background-color: #b2b2b2;
+}
+
+#c-5 {
+    background-color: #999999;
+}
+
+#c-6 {
+    background-color: #7f7f7f;
+}
+
+#c-7 {
+    background-color: #666666;
+}
+
+#c-8 {
+    background-color: #4c4c4c;
+}
+
+#c-9 {
+    background-color: #333333;
+}
+
+#c-10 {
+    background-color: #191919;
+}
+
+#c-11 {
+    background-color: #000000;
+}
+
+#c-12 {
+    background-color: #7f0000;
+}
+
+#c-13 {
+    background-color: #7f3f00;
+}
+
+#c-14 {
+    background-color: #7f7f00;
+}
+
+#c-15 {
+    background-color: #3f7f00;
+}
+
+#c-16 {
+    background-color: #007f00;
+}
+
+#c-17 {
+    background-color: #007f3f;
+}
+
+#c-18 {
+    background-color: #007f7f;
+}
+
+#c-19 {
+    background-color: #003f7f;
+}
+
+#c-20 {
+    background-color: #00007f;
+}
+
+#c-21 {
+    background-color: #3f007f;
+}
+
+#c-22 {
+    background-color: #7f007f;
+}
+
+#c-23 {
+    background-color: #7f003f;
+}
+
+#c-24 {
+    background-color: #bf0000;
+}
+
+#c-25 {
+    background-color: #bf5f00;
+}
+
+#c-26 {
+    background-color: #bfbf00;
+}
+
+#c-27 {
+    background-color: #5fbf00;
+}
+
+#c-28 {
+    background-color: #00bf00;
+}
+
+#c-29 {
+    background-color: #00bf5f;
+}
+
+#c-30 {
+    background-color: #00bfbf;
+}
+
+#c-31 {
+    background-color: #005fbf;
+}
+
+#c-32 {
+    background-color: #0000bf;
+}
+
+#c-33 {
+    background-color: #5f00bf;
+}
+
+#c-34 {
+    background-color: #bf00bf;
+}
+
+#c-35 {
+    background-color: #bf005f;
+}
+
+#c-36 {
+    background-color: #ff0000;
+}
+
+#c-37 {
+    background-color: #ff7f00;
+}
+
+#c-38 {
+    background-color: #ffff00;
+}
+
+#c-39 {
+    background-color: #7fff00;
+}
+
+#c-40 {
+    background-color: #00ff00;
+}
+
+#c-41 {
+    background-color: #00ff7f;
+}
+
+#c-42 {
+    background-color: #00ffff;
+}
+
+#c-43 {
+    background-color: #007fff;
+}
+
+#c-44 {
+    background-color: #0000ff;
+}
+
+#c-45 {
+    background-color: #7f00ff;
+}
+
+#c-46 {
+    background-color: #ff00ff;
+}
+
+#c-47 {
+    background-color: #ff007f;
+}
+
+#c-48 {
+    background-color: #ff5656;
+}
+
+#c-49 {
+    background-color: #ffaa56;
+}
+
+#c-50 {
+    background-color: #ffff56;
+}
+
+#c-51 {
+    background-color: #aaff56;
+}
+
+#c-52 {
+    background-color: #56ff56;
+}
+
+#c-53 {
+    background-color: #56ffaa;
+}
+
+#c-54 {
+    background-color: #56ffff;
+}
+
+#c-55 {
+    background-color: #56aaff;
+}
+
+#c-56 {
+    background-color: #aa56ff;
+}
+
+#c-57 {
+    background-color: #ff56ff;
+}
+
+#c-58 {
+    background-color: #ff56aa;
+}
+
+#c-59 {
+    background-color: #ffaaaa;
+}
+
+#c-60 {
+    background-color: #ffd4aa;
+}
+
+#c-61 {
+    background-color: #ffffaa;
+}
+
+#c-62 {
+    background-color: #d4ffaa;
+}
+
+#c-63 {
+    background-color: #aaffaa;
+}
+
+#c-64 {
+    background-color: #aaffd4;
+}
+
+#c-65 {
+    background-color: #aaffff;
+}
+
+#c-66 {
+    background-color: #aad4ff;
+}
+
+#c-67 {
+    background-color: #aaaaff;
+}
+
+#c-68 {
+    background-color: #d4aaff;
+}
+
+#c-69 {
+    background-color: #ffaaff;
+}
+
+#c-70 {
+    background-color: #ffaad4;
+}
+
+
+/* */
