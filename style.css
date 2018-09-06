@@ -12,6 +12,10 @@ body {
     background-color: #00ff8015;
 }
 
+#header {
+    color: red;
+}
+
 
 /* Панели управление конструктором */
 
