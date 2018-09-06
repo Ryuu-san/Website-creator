@@ -12,6 +12,10 @@ body {
     background-color: #00ff8015;
 }
 
+#header {
+    color: red;
+}
+
 
 /* Панели управление конструктором */
 
@@ -91,7 +95,7 @@ body {
     height: 100px;
     position: absolute;
     cursor: pointer;
-    /* background: red; */
+    background: red;
 }
 
 

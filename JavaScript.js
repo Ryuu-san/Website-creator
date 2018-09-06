@@ -24,23 +24,13 @@ function adjuster_color() {
     color = "#" + color;
     elem.style.backgroundColor = color;
     znak.value = color;
-    color_calling_the_color_bar();
 }
-// считываем и задаем цвет иконке цвета
-var color_calling_the_color_bar = function() {
-    var elem = document.getElementById('blok-1');
-    var color = document.getElementById('calling-the-color-bar');
-    var style = getComputedStyle(elem);
-    color.style.background = style.background;
-}
-
 //Цвет и его строчное изменение
 function color_input() {
     var blok = document.getElementById('blok-1');
     var color_input = document.getElementById('color-slider').value;
     blok.style.background = "#" + color_input;
     blok.style.background = color_input;
-    color_calling_the_color_bar();
 }
 //Ширина и ее строчное изменение
 function width_input() {
@@ -80,6 +70,23 @@ function hide_resizing() {
     document.getElementById('item-size-menu').style.display = "none";
     document.getElementById('menu-color').style.display = "none";
 }
+//Редактор цвета и все прочее с ним связанное
+$(function() {
+    $.fn.jPicker.defaults.images.clientPath = 'images/';
+    var LiveCallbackElement = $('#Live'),
+        LiveCallbackButton = $('#LiveButton');
+    $('#Inline').jPicker({
+        window: {
+            title: 'Inline Example'
+        }
+    });
+    $('#Expandable').jPicker({
+        window: {
+            expandable: true,
+            title: 'Expandable Example'
+        }
+    });
+});
 // Код отвечающий за выбор цвета для блока
 function color_selection_1() {
     var block = document.getElementById('blok-1');
@@ -451,3 +458,11 @@ open_menu.onclick = function() {
         menu_color.style.display = 'none';
     }
 };
+// считываем и задаем цвет иконке цвета
+var color_calling_the_color_bar = function() {
+    var calling_the_color_bar = document.getElementById('calling-the-color-bar');
+    var color_block = document.getElementById('blok-1');
+    color_block = 'grey';
+    calling_the_color_bar.style.background = color_block;
+}
+color_calling_the_color_bar();
