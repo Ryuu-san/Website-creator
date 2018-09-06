@@ -12,10 +12,6 @@ body {
     background-color: #00ff8015;
 }
 
-#header {
-    color: red;
-}
-
 
 /* Панели управление конструктором */
 
@@ -95,7 +91,7 @@ body {
     height: 100px;
     position: absolute;
     cursor: pointer;
-    background: red;
+    /* background: red; */
 }
 
 
@@ -103,12 +99,6 @@ body {
 
 
 /* Редактор цвета */
-
-
-/* #jPicker {
-    position: absolute;
-    right: 200px;
-} */
 
 #menu-color {
     width: 170px;
