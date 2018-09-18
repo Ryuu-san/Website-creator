@@ -76,6 +76,56 @@ body {
 }
 
 
+/* Главный блок настроек */
+
+#main-control-unit {
+    background-color: #d9e263;
+}
+
+#first-switch,
+#second-switch {
+    width: 30px;
+    height: 10px;
+    border: 2px solid grey;
+}
+
+#first-switch {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-left: 30px solid transparent;
+    border-top: 10px solid transparent;
+    border-right: 30px solid #6e6e6e;
+    cursor: pointer;
+}
+
+#first-switch:hover {
+    border-right: 30px solid #e90000;
+}
+
+#second-switch {
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-bottom: 10px solid transparent;
+    border-left: 30px solid #6e6e6e;
+    border-top: 10px solid transparent;
+    border-right: 30px solid transparent;
+    cursor: pointer;
+}
+
+#second-switch:hover {
+    border-left: 30px solid #aef800;
+}
+
+
+/* Блок визуальных настроек */
+
+#visual-adjustment-unit {
+    background-color: #55ff5d;
+}
+
+
 /* */
 
 
@@ -91,7 +141,7 @@ body {
     height: 100px;
     position: absolute;
     cursor: pointer;
-    /* background: red; */
+    background: #949494;
 }
 
 
@@ -100,7 +150,7 @@ body {
 
 /* Редактор цвета */
 
-#menu-color {
+#panel_menu_color {
     width: 170px;
     position: absolute;
     display: none;
@@ -130,7 +180,7 @@ body {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    background-color: white;
+    background-color: #949494;
     border: 1px solid #ffffff;
 }
 
