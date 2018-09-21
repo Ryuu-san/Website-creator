@@ -5,3 +5,4 @@
 UPD(1)
 ![default](https://user-images.githubusercontent.com/41924146/45900182-16f8b980-bdf0-11e8-83b0-d9abbe13b5c6.gif)
 ![default](https://user-images.githubusercontent.com/41924146/45900193-1c560400-bdf0-11e8-8aa8-57cdca78d2b2.gif)
+Измененное оформление и добавленный функционал
