@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <script src="JavaScript.js" defer></script>
-    <script type="text/javascript" src="picker.js"></script>
-    <script type="text/javascript" src="Lib.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="style1.css">
+    <!-- <script type="text/javascript" src="picker.js"></script> -->
+    <!-- <script type="text/javascript" src="Lib.js" defer></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="style1.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/overcast/jquery-ui.css" />
@@ -16,38 +16,86 @@
 
 <body>
     <div id="header">
-        <div id="header-menu-panel"></div>
+        <div id="header-menu-panel">
+            <p id="main-creation-menu">Главное меню</p>
+            <p id="block-of-setting">Блок настроек</p>
+        </div>
         <!-- Панелька меню -->
         <div id="header-right-menu-panel">
-            <div id="header-control-panel-create-blok" onclick="dd()">
+            <div id="header-control-panel-create-blok">
                 <div id="panel-create-blok" onmousedown="return false" onselectstart="return false">
                     <p id="description">Создать блок</p>
                 </div>
             </div>
             <div id="item-size-menu">
-                <h3>Главный блок настроек</h3>
+                <p id="heading-main-menu-setting">Главный блок настроек</p>
                 <div id="main-control-unit">
                     <div id="width-adjuster">
-                        <p>Ширина<input type="range" id="adjuster-width" value="0" max="2000"></p>
-                        <input type="text" id="width-slider" placeholder="Ширина: 0px">
-                        <button type="button" onclick="width_input()">Применить ширину</button>
+                        <p id="configuration-header">Ширина</p>
+                        <input type="range" class="input-style" id="adjuster-width" value="0" max="2000">
+                        <input type="text" id="width-slider" placeholder="0px">
+                        <button type="button" onclick="width_input()">Применить</button>
                     </div>
                     <div id="height-adjuster">
-                        <p>Высота<input type="range" id="adjuster-height" value="0" max="2000"></p>
-                        <input type="text" id="height-slider" placeholder="Высота: 0px">
-                        <button type="button" onclick="height_input()">Применить высоту</button>
+                        <p id="configuration-header">Высота</p>
+                        <input type="range" id="adjuster-height" value="0" max="2000">
+                        <input type="text" id="height-slider" placeholder="0px">
+                        <button type="button" onclick="height_input()">Применить</button>
+                    </div>
+                    <div id="radius-adjuster">
+                        <p id="configuration-header">Радиус</p>
+                        <input type="range" id="adjuster-radius" value="0" max="500">
+                        <input type="text" id="radius-slider" placeholder="0px">
+                        <button type="button" onclick="radius_input()">Применить</button>
+                    </div>
+                    <div id="setting-margin-block">
+                        <p id="configuration-header">Margin</p>
+                        <input type="text" id="margin-slider" placeholder="0px">
+                        <button type="button" onclick="margin_input()">Применить</button>
+                    </div>
+                    <div id="setting-padding-block">
+                        <p id="configuration-header">Padding</p>
+                        <input type="text" id="padding-slider" placeholder="0px">
+                        <button type="button" onclick="padding_input()">Применить</button>
+                    </div>
+                    <div id="setting-float-block">
+                        <p id="configuration-header">Позиционирование</p>
+                        <select name="float" id="float-menu">
+                       <option value="right">right</option>
+                       <option value="left">left</option>
+                       <option value="none">none</option>
+                       <option value="inherit">inherit</option>
+                    </select>
+                        <button type="button" onclick="float_input()">Применить</button>
+                    </div>
+                    <div id="setting-border-block">
+                        <p id="configuration-header">Обводка</p>
+                        <input type="text" id="border-slider" placeholder="0px">
+                        <button type="button" onclick="border_input()">Применить</button>
+                    </div>
+                    <div id="setting-opacity-block">
+                        <p id="configuration-header">Прозрачность</p>
+                        <input type="range" id="adjuster-opacity" step="0.05" value="0" max="1">
+                        <input type="text" id="opacity-slider" placeholder="0">
+                        <button type="button" onclick="opacity_input()">Применить</button>
+                    </div>
+                    <div id="setting-z_index">
+                        <p id="configuration-header">Наложение</p>
+                        <input type="text" id="z-index-slider" placeholder="0">
+                        <button type="button" onclick="z_index_input()">Применить</button>
                     </div>
                 </div>
-                <h3>Блок визуальных настроек</h3>
+                <p id="heading-block-visual-setting">Визуальные настройки</p>
                 <div id="visual-adjustment-unit">
                     <div id="color-adjuster">
-                        <p>Рандомный цвет<input type="range" id="adjuster-color" value="0" max="999999"></p>
+                        <p id="configuration-header">Рандомный цвет</p>
+                        <input type="range" id="adjuster-color" value="0" max="999999">
                         <input type="text" id="color-slider" placeholder="Цвет по умолчанию">
-                        <button type="button" onclick="color_input()">Применить выбранный цвет</button>
-                        <div id="calling-the-color-bar" onclick="open_menu_color()"></div>
+                        <button type="button" onclick="color_input()">Применить</button>
+                        <div id="calling-the-color-bar"></div>
                     </div>
                     <div id="standard-fonts-and-custom-font">
-                        <p>Шрифт</p>
+                        <p id="configuration-header">Шрифт</p>
                         <p id="text_test">Текст для теста и не более после удалить.</p>
                         <select name="font" id="font-menu">
                                     <option value="Стандарт">Стандарт</option>
@@ -69,25 +117,39 @@
                                     <option value="Verdana">Verdana</option>
                              </select>
                         <div id="switch-menus">
-                            <div id="first-switch" onclick="back()"></div>
-                            <div id="second-switch" onclick="forward()"></div>
+                            <div id="first-switch" onclick="back()" onmousedown="return false" onselectstart="return false">◀</div>
+                            <div id="second-switch" onclick="forward()" onmousedown="return false" onselectstart="return false">▶</div>
                         </div>
                         <button type="button" onclick="applying_a_font_from_the_list()">Применить шрифт</button>
                         <input type="text" id="user-supplied-font" placeholder="Иной шрифт">
                         <button type="button" onclick="custom_font()">Шрифт пользователя</button>
                     </div>
-                    <p>Размер текста</p>
-                    <div id="text-size-block">
-                        <input type="text" id="text-size" placeholder="Изменить размер текста">
-                        <button type="button" onclick="text_size()">Размер текста</button>
+                    <div id="text-setting-menu">
+                        <p id="configuration-header">Размер текста</p>
+                        <div id="text-size-block">
+                            <input type="text" id="text-size" placeholder="Изменить размер текста">
+                            <button type="button" onclick="text_size()">Размер текста</button>
+                            <p id="configuration-header">Изменение размера текста</p>
+                            <input type="range" id="adjuster-of-the-text-size" value="0" max="100">
+                        </div>
+                        <div id="text-alignment-for-text">
+                            <select name="text-align" id="text-align-menu">
+                            <option value="center">center</option>
+                            <option value="left">left</option>
+                            <option value="right">right</option>
+                            <option value="justify">justify</option>
+                            <option value="auto">auto</option>
+                            <option value="inherit">inherit</option>
+                        </select>
+                            <button type="button" onclick="setting_text_align()">Применить выравнивание</button>
+                        </div>
                     </div>
                 </div>
-                <button type="button" onclick="hide_resizing()">Убрать панель</button>
             </div>
             <!-- Панель для выбора стандартных цветов -->
             <div id="panel_menu_color">
                 <!-- Редактор цвета -->
-                <div class="picker" id="primary_block">
+                <!-- <div class="picker" id="primary_block">
 
                     <div id="line">
                         <div id="arrows">
@@ -100,7 +162,7 @@
                         <img src="https://lh3.googleusercontent.com/-8Dm4nhAOssQ/T_IqwyIFXmI/AAAAAAAAACA/4QKmS7s_otE/s256/bgGradient.png" class="bk_img" id="bk_img">
                         <div class="circle" id="circle"></div>
                     </div>
-                </div>
+                </div> -->
                 <div id="menu-color" onmousedown="return false" onselectstart="return false">
                     <section id="menu-c-1">
                         <div id="c-1" onclick="color_selection_1()"></div>
@@ -197,9 +259,9 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         picker.init();
-    </script>
+    </script> -->
 </body>
 
 </html>

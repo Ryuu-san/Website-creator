@@ -3,10 +3,13 @@ function define_a_global_variable() {
     var global = window || this;
     global.blok = document.getElementById("blok-1");
 }
-//Регуляторы ширины и высоты блока
+//Регуляторы размеров
 document.getElementById('adjuster-width').oninput = adjuster_width;
 document.getElementById('adjuster-height').oninput = adjuster_height;
+document.getElementById('adjuster-radius').oninput = adjuster_radius;
+document.getElementById('adjuster-opacity').oninput = adjuster_opacity;
 document.getElementById('adjuster-color').oninput = adjuster_color;
+document.getElementById('adjuster-of-the-text-size').oninput = adjuster_of_the_text_size;
 //Изменение ширины ползунком и поле которое показывает параметр
 function adjuster_width() {
     var width_slider = document.getElementById('width-slider');
@@ -19,6 +22,12 @@ function adjuster_height() {
     blok.style.height = this.value + 'px';
     height_slider.value = this.value + 'px';
 }
+// Изменение радиуса ползунком и поле которое показывает параметр
+function adjuster_radius() {
+    var radius_slider = document.getElementById('radius-slider');
+    blok.style.borderRadius = this.value + 'px';
+    radius_slider.value = this.value + 'px';
+}
 // изменение цвета ползунком на рандом
 function adjuster_color() {
     var color = Math.floor(Math.random() * 999999);
@@ -28,7 +37,13 @@ function adjuster_color() {
     znak.value = color;
     color_calling_the_color_bar();
 }
-
+// изменение размера текста с помощью ползунка и запись в поле 
+function adjuster_of_the_text_size() {
+    var text_test = document.getElementById('text_test');
+    var text_size = document.getElementById('text-size');
+    text_size.value = this.value + 'px';
+    text_test.style.fontSize = this.value + 'px';
+}
 // считываем и задаем цвет иконке цвета
 var color_calling_the_color_bar = function() {
     var color = document.getElementById('calling-the-color-bar');
@@ -55,15 +70,63 @@ function height_input() {
     blok.style.height = height_slider + 'px';
     blok.style.height = height_slider;
 }
+// Радиус и его строчное значениеё
+function radius_input() {
+    var radius_slider = document.getElementById('radius-slider').value;
+    blok.style.borderRadius = radius_slider + 'px';
+    blok.style.borderRadius = radius_slider;
+}
+//margin и его строчное значение 
+function margin_input() {
+    var margin_slider = document.getElementById('margin-slider').value;
+    blok.style.margin = margin_slider + 'px';
+    blok.style.margin = margin_slider;
+}
+//padding и его строчное значение 
+function padding_input() {
+    var padding_slider = document.getElementById('padding-slider').value;
+    blok.style.padding = padding_slider + 'px';
+    blok.style.padding = padding_slider;
+}
+// Считываем значение с поля и применяем float к блоку
+function float_input() {
+    var float_input = document.getElementById('float-menu').value;
+    blok.style.float = float_input;
+}
+// Задаем border
+function border_input() {
+    var border_slider = document.getElementById('border-slider').value;
+    blok.style.border = border_slider + 'px';
+    blok.style.border = border_slider;
+}
+
+//изменение прозрачности блока ползунком
+function adjuster_opacity() {
+    var adjuster_opacity = document.getElementById('adjuster-opacity').value;
+    var opacity_slider = document.getElementById('opacity-slider');
+    blok.style.opacity = adjuster_opacity;
+    opacity_slider.value = adjuster_opacity;
+}
+
+//прозрачность блока
+function opacity_input() {
+    var opacity_slider = document.getElementById('opacity-slider').value;
+    blok.style.opacity = opacity_slider;
+}
+//Наложение блока
+function z_index_input() {
+    var z_index = document.getElementById('z-index-slider').value;
+    blok.style.zIndex = z_index;
+}
 // Двигаем блок мышкой
 $(function() {
     $("#blok-1").draggable();
 });
-
-var block2 = document.getElementById('primary_block');
-block2.ondragstart = function() {
-    return false;
-};
+//чтобы не дрыгался color picker (удалить если убирать color picker)
+// var block2 = document.getElementById('primary_block');
+// block2.ondragstart = function() {
+//     return false;
+// };
 // sav_name();
 //Создаем блок БЕТА
 // function create_blok() {
@@ -75,20 +138,14 @@ block2.ondragstart = function() {
 //Создаем блок и добавляем ему функцию перетаскивания
 $('#header-control-panel-create-blok').on('click', function() {
     $("#menu_blok").append('<div class="blok-1" id="blok-1"></div>');
-    document.getElementById('item-size-menu').style.display = "block";
     $(function() {
         $(".blok-1").draggable({});
     });
     define_a_global_variable();
 });
-//Прячем меню изменения размеров
-function hide_resizing() {
-    document.getElementById('item-size-menu').style.display = "none";
-    document.getElementById('panel_menu_color').style.display = "none";
-}
 //Редактор цвета и все прочее с ним связанное
 
-// Код отвечающий за выбор цвета для блока
+// Код отвечающий за выбор цвета для блока (переделать в массив)
 function color_selection_1() {
     blok.style.background = "#ffffff";
 }
@@ -387,7 +444,56 @@ open_menu.onclick = function() {
         menu_color.style.display = 'none';
     }
 };
-//Считываем значение и применяем к тексту
+// открываем и прячем главное меню
+var open_main_menu = document.getElementById('main-creation-menu');
+open_main_menu.onclick = function() {
+    var main_menu = document.getElementById('header-control-panel-create-blok');
+    document.getElementById('item-size-menu').style.display = 'none';
+    document.getElementById('visual-adjustment-unit').style.display = 'none';
+    document.getElementById('panel_menu_color').style.display = 'none';
+    if (main_menu.style.display != 'block') {
+        main_menu.style.display = 'block';
+    } else {
+        main_menu.style.display = 'none';
+    }
+}
+
+//открываем и прячем блок настроек
+var open_block_setting = document.getElementById('block-of-setting');
+open_block_setting.onclick = function() {
+    var block_setting = document.getElementById('item-size-menu');
+    document.getElementById('header-control-panel-create-blok').style.display = 'none';
+    document.getElementById('main-control-unit').style.display = 'none';
+    document.getElementById('visual-adjustment-unit').style.display = 'none';
+    document.getElementById('panel_menu_color').style.display = 'none';
+    if (block_setting.style.display != 'block') {
+        block_setting.style.display = 'block';
+    } else {
+        block_setting.style.display = 'none';
+    }
+}
+
+//показываем содержимое настроек
+var open_menu_setting = document.getElementById('heading-main-menu-setting');
+open_menu_setting.onclick = function() {
+        var open_setting = document.getElementById('main-control-unit');
+        if (open_setting.style.display != 'block') {
+            open_setting.style.display = 'block';
+        } else {
+            open_setting.style.display = 'none';
+        }
+    }
+    //открываем визальные настройки
+var open_visual_block_setting = document.getElementById('heading-block-visual-setting');
+open_visual_block_setting.onclick = function() {
+        var open_visual_setting = document.getElementById('visual-adjustment-unit');
+        if (open_visual_setting.style.display != 'block') {
+            open_visual_setting.style.display = 'block';
+        } else {
+            open_visual_setting.style.display = 'none';
+        }
+    }
+    //Считываем значение и применяем к тексту
 function applying_a_font_from_the_list() {
     var text = document.getElementById('text_test');
     var font_text = document.getElementById('font-menu').value;
@@ -430,4 +536,10 @@ function text_size() {
     var text_size = document.getElementById('text-size').value;
     text.style.fontSize = text_size + 'px';
     text.style.fontSize = text_size;
+}
+// выравнивание текста
+function setting_text_align() {
+    var text = document.getElementById('text_test');
+    text_align = document.getElementById('text-align-menu').value;
+    text.style.textAlign = text_align;
 }
