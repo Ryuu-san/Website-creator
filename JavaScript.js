@@ -1,7 +1,7 @@
 //Задаем главные блоки
 function define_a_global_variable() {
     var global = window || this;
-    global.blok = document.getElementById("blok-1");
+    global.blok = document.getElementById(test_per);
 }
 //Регуляторы размеров
 document.getElementById('adjuster-width').oninput = adjuster_width;
@@ -107,7 +107,6 @@ function adjuster_opacity() {
     blok.style.opacity = adjuster_opacity;
     opacity_slider.value = adjuster_opacity;
 }
-
 //прозрачность блока
 function opacity_input() {
     var opacity_slider = document.getElementById('opacity-slider').value;
@@ -129,21 +128,40 @@ $(function() {
 // };
 // sav_name();
 //Создаем блок БЕТА
-// function create_blok() {
-//     var menu_blok = document.getElementById('menu_blok');
-//     var new_blok = document.createElement('div');
-//     new_blok.id = 'blok-1';
-//     menu_blok.appendChild(new_blok);
-// }
-//Создаем блок и добавляем ему функцию перетаскивания
+// var create_blok = document.getElementById("header-control-panel-create-blok");
+
+// create_blok.onclick = function() {
+//         var menu_blok = document.getElementById('menu_blok');
+//         var new_blok = document.createElement('div');
+//         new_blok.id = 'blok-1';
+//         menu_blok.appendChild(new_blok);
+//     }
+//Создаем блок и добавляем ему функцию перетаскивания, делаем уникальный id на каждый блок
+ll = 0;
 $('#header-control-panel-create-blok').on('click', function() {
     $("#menu_blok").append('<div class="blok-1" id="blok-1"></div>');
     $(function() {
         $(".blok-1").draggable({});
     });
-    define_a_global_variable();
+    var new_blok = document.getElementById('blok-1');
+    ll++;
+    new_blok.id = ll;
+    // define_a_global_variable();
 });
-//Редактор цвета и все прочее с ним связанное
+//Отслеживаем клик по элементу и задаем его в переменную
+test_per = 0;
+var box_of_items = document.getElementById('menu_blok');
+box_of_items.onclick = function(event) {
+        var dd = document.getElementById('111');
+        event = event || window.event;
+        if (!event.target) {
+            event.target = event.srcElement;
+        }
+        test_per = event.target.id;
+        dd.value += test_per + " ";
+        define_a_global_variable();
+    }
+    //Редактор цвета и все прочее с ним связанное
 
 // Код отвечающий за выбор цвета для блока (переделать в массив)
 function color_selection_1() {
@@ -433,6 +451,7 @@ function color_selection_71() {
 function color_selection_72() {
     blok.style.background = "#ffaad4";
 }
+
 // Прячем и показываем панельку цветов 
 var open_menu = document.getElementById('calling-the-color-bar');
 

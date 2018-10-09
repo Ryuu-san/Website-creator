@@ -282,12 +282,16 @@ select {
     margin: 100px 0px 0px 20px;
 }
 
-#blok-1 {
+.blok-1 {
     width: 100px;
     height: 100px;
     position: absolute;
     cursor: pointer;
     background: #949494;
+}
+
+#menu_blok div:active {
+    /* border: 3px dashed #f65757; */
 }
 
 
