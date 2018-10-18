@@ -137,31 +137,58 @@ $(function() {
 //         menu_blok.appendChild(new_blok);
 //     }
 //Создаем блок и добавляем ему функцию перетаскивания, делаем уникальный id на каждый блок
-ll = 0;
+storage_id = 0;
 $('#header-control-panel-create-blok').on('click', function() {
     $("#menu_blok").append('<div class="blok-1" id="blok-1"></div>');
     $(function() {
         $(".blok-1").draggable({});
     });
     var new_blok = document.getElementById('blok-1');
-    ll++;
-    new_blok.id = ll;
-    // define_a_global_variable();
+    // var new_menu_blok = document.getElementById('men');
+    storage_id++;
+    // new_menu_blok.id = 's' + storage_id;
+    new_blok.id = storage_id;
+    define_a_global_variable();
+    test_function();
 });
+
 //Отслеживаем клик по элементу и задаем его в переменную
 test_per = 0;
-var box_of_items = document.getElementById('menu_blok');
-box_of_items.onclick = function(event) {
-        var dd = document.getElementById('111');
-        event = event || window.event;
+
+function test_function() {
+    var box_of_items = document.getElementById(storage_id);
+    box_of_items.onclick = function(event) {
+        var dd = document.getElementById('111'); // Для теста, удалить потом
+        event = event || box_of_items.event;
         if (!event.target) {
             event.target = event.srcElement;
         }
         test_per = event.target.id;
-        dd.value += test_per + " ";
+        dd.value += test_per + " "; // Для теста, удалить потом
         define_a_global_variable();
+        blok.style.outline = '10px solid #ecff8e'; // Для теста, переделать потом
+        // document.getElementById('s' + test_per).style.display = 'block'; // Для теста, переделать потом
     }
-    //Редактор цвета и все прочее с ним связанное
+}
+
+//скрыть объект если клик за его пределами (после переделать, кривое)
+// $(document).click(function(e) {
+//     if ($(e.target).closest(test_per).length) return;
+//     $(test_per).css('outline', 'none');
+//     e.stopPropagation();
+// });
+jQuery(function($) {
+    $(document).mouseup(function(e) { // событие клика по веб-документу
+        var dqv = $(blok); // тут указываем ID элемента
+        if (!dqv.is(e.target) // если клик был не по нашему блоку
+            &&
+            dqv.has(e.target).length === 0) { // и не по его дочерним элементам
+            dqv.css('outline', 'none'); // скрываем его
+
+        }
+    });
+});
+//Редактор цвета и все прочее с ним связанное
 
 // Код отвечающий за выбор цвета для блока (переделать в массив)
 function color_selection_1() {

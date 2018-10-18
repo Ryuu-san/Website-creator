@@ -282,6 +282,19 @@ select {
     margin: 100px 0px 0px 20px;
 }
 
+
+/* .men {
+    width: 56px;
+    height: 16px;
+    position: relative;
+    top: -20px;
+    left: 3px;
+    display: none;
+    float: right;
+    background-color: #ecff8e;
+    outline: 3px solid #ecff8e;
+} */
+
 .blok-1 {
     width: 100px;
     height: 100px;
@@ -290,8 +303,9 @@ select {
     background: #949494;
 }
 
-#menu_blok div:active {
-    /* border: 3px dashed #f65757; */
+#menu_blok>div {
+    /* border: 3px dashed #f65757;
+    position: absolute; */
 }
 
 
